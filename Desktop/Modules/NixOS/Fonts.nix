@@ -2,7 +2,7 @@
 
 {
   fonts.packages = with pkgs; [
-    inputs.sf-fonts.packages.${pkgs.system}.default
+    inputs.sf-fonts.packages.${pkgs.stdenv.hostPlatform.system}.default
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
