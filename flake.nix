@@ -24,9 +24,11 @@
   outputs = inputs@{ self, nixpkgs, ... }: {
     nixosConfigurations = {
       Desktop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
-          modules = [ ./Desktop/Configuration.nix ];
+        specialArgs = { inherit inputs; };
+        modules = [
+          { nixpkgs.hostPlatform = "x86_64-linux"; }
+          ./Desktop/Configuration.nix
+        ];
       };
     };
   };
