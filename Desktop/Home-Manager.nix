@@ -13,6 +13,7 @@
     ./Modules/Home-Manager/Git.nix
     ./Modules/Home-Manager/Kitty.nix
     ./Modules/Home-Manager/Btop.nix
+    ./Modules/Home-Manager/Bash.nix
   ];
 
   home = {
