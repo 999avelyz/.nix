@@ -34,7 +34,7 @@
 
     kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-zen4;
 
-    kernelModules = [ "v4l2loopback" ];
+    kernelModules = [ "v4l2loopback" "i2c-dev" ];
 
     extraModulePackages = with config.boot.kernelPackages; [
       v4l2loopback
@@ -52,6 +52,8 @@
 
   hardware.new-lg4ff.enable = true;
 
+  hardware.i2c.enable = true;
+
   programs.appimage = {
     enable = true;
     binfmt = true;
@@ -62,4 +64,8 @@
     scheduler = "scx_lavd";
     extraArgs = [ "--performance" "--pinned-slice-us" "500" ];
   };
+
+  services.udev.extraRules = ''
+          KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
+    '';
 }

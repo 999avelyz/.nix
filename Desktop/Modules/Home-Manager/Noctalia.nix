@@ -121,8 +121,7 @@
         "desktop-widget-0000000000000002",
         "desktop-widget-0000000000000003",
         "desktop-widget-0000000000000004",
-        "desktop-widget-0000000000000005",
-        "desktop-widget-0000000000000006"
+        "desktop-widget-0000000000000005"
     ]
 
         [desktop_widgets.grid]
@@ -160,6 +159,7 @@
 
             [desktop_widgets.widget.desktop-widget-0000000000000003.settings]
             background_opacity = 0.5
+            background_padding = 7
             background_radius = 7
             display = "gauge"
             stat = "cpu_usage"
@@ -177,6 +177,7 @@
 
             [desktop_widgets.widget.desktop-widget-0000000000000004.settings]
             background_opacity = 0.5
+            background_padding = 7
             background_radius = 7
             display = "gauge"
             stat = "gpu_usage"
@@ -199,22 +200,6 @@
             display = "gauge"
             stat = "ram_pct"
             stat2 = "swap_pct"
-
-        [desktop_widgets.widget.desktop-widget-0000000000000006]
-        box_height = 208.0
-        box_width = 512.0
-        cx = 272.0
-        cy = 148.0
-        enabled = true
-        output = "HDMI-A-1"
-        rotation = 0.0
-        type = "weather"
-
-            [desktop_widgets.widget.desktop-widget-0000000000000006.settings]
-            background = false
-            background_opacity = 0.0
-            color = "primary"
-            show_forecast = false
 
     [dock]
     active_monitor_only = false
@@ -563,7 +548,7 @@
 
         [shell.screen_corners]
         enabled = false
-        size = 32
+        size = 1
 
         [shell.screenshot]
         confirm_region = false
@@ -711,9 +696,13 @@
         order = "random"
         recursive = true
 
+        [wallpaper.monitor.HDMI-A-1]
+        fill_color = "primary"
+        match = "HDMI-A-1"
+
     [weather]
     effects = true
-    enabled = false
+    enabled = true
     refresh_minutes = 30
     unit = "metric"
 
@@ -820,7 +809,9 @@
     type = "tray"
 
     [widget.workspaces]
+    active_pill_size = 2.0
     hide_when_empty = true
+    inactive_pill_size = 1.55
     style = "minimal"
     type = "workspaces"
     '';

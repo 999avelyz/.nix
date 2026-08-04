@@ -73,7 +73,6 @@
       }
 
       spawn-at-startup "kdeconnectd"
-      spawn-at-startup "/home/denis/.config/niri/scripts/noctalia-overview-widgets.sh"
 
       hotkey-overlay {
           skip-at-startup
@@ -113,30 +112,42 @@
       }
 
       binds {
+
           Mod+Minus { show-hotkey-overlay; }
 
           Mod+Shift+C { spawn-sh "noctalia msg panel-toggle yuuto/calculator:panel"; }
+
           Mod+B { spawn "waterfox"; }
+
           Mod+T hotkey-overlay-title="Open the terminal"    { spawn "kitty";               }
+
           Mod+E hotkey-overlay-title="Open the filemanager"    { spawn "nautilus" "-w";       }
+
           Mod+R { spawn-sh "noctalia msg panel-toggle launcher"; }
+
           Mod+U hotkey-overlay-title="Run the app launcher" { spawn "rofi" "-show" "drun"; }
+
           //Mod+Shift+C { spawn-sh "noctalia msg plugin oldirtty/color_picker:service all pick"; }
+
           Mod+Shift+Escape { spawn-sh "pkill noctalia; sleep 1; noctalia"; }
+
           Mod+Shift+W { spawn-sh "noctalia msg panel-toggle noctalia/wallhaven:browser"; }
+
           Mod+Ctrl+W { spawn-sh "noctalia msg panel-toggle noctalia/mpvpaper:picker"; }
+
+          Mod+V { spawn-sh "noctalia msg panel-toggle clipboard"; }
 
           XF86AudioRaiseVolume  allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
           XF86AudioLowerVolume  allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-";        }
           XF86AudioMute         allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";        }
 
+          Mod+XF86AudioRaiseVolume { spawn-sh "noctalia msg brightness-up";   }
+          Mod+XF86AudioLowerVolume { spawn-sh "noctalia msg brightness-down"; }
+
           Ctrl+Alt+Shift+Up     allow-when-locked=true { spawn-sh "playerctl play-pause"; }
           Ctrl+Alt+Shift+Down   allow-when-locked=true { spawn-sh "playerctl play-pause"; }
           Ctrl+Alt+Shift+Left   allow-when-locked=true { spawn-sh "playerctl previous";   }
           Ctrl+Alt+Shift+Right  allow-when-locked=true { spawn-sh "playerctl next";       }
-
-          //Mod+XF86AudioRaiseVolume   allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-          //Mod+XF86AudioLowerVolume   allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
 
           Mod+W hotkey-overlay-title="Open the overview" { toggle-overview; }
           Mod+C hotkey-overlay-title="Close a window" repeat=false { close-window; }
@@ -146,10 +157,10 @@
           Mod+Up    { focus-window-up;    }
           Mod+Right { focus-column-right; }
 
-          Mod+Ctrl+Left  { move-column-left;  }
-          Mod+Ctrl+Down  { move-window-down;  }
-          Mod+Ctrl+Up    { move-window-up;    }
-          Mod+Ctrl+Right { move-column-right; }
+          Mod+Shift+Left  { move-column-left;  }
+          Mod+Shift+Down  { move-window-down;  }
+          Mod+Shift+Up    { move-window-up;    }
+          Mod+Shift+Right { move-column-right; }
 
           Alt+Left  { focus-monitor-left;  }
           Alt+Down  { focus-monitor-down;  }
