@@ -7,7 +7,6 @@
     playerctl
     rofi
     wl-clipboard
-    btop
     ddcutil
     xwayland-satellite
     nautilus

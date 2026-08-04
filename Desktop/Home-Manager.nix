@@ -12,6 +12,7 @@
     ./Modules/Home-Manager/Spicetify.nix
     ./Modules/Home-Manager/Git.nix
     ./Modules/Home-Manager/Kitty.nix
+    ./Modules/Home-Manager/Btop.nix
   ];
 
   home = {
