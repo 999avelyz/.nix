@@ -227,7 +227,17 @@
     margin_edge = 7
     margin_ends = 2
     monitors = []
-    pinned = [ "org.gnome.Nautilus", "kitty", "waterfox", "equibop", "feishin", "spotify", "steam", "heroic" ]
+    pinned = [
+        "org.gnome.Nautilus",
+        "kitty",
+        "waterfox",
+        "equibop",
+        "io.github.kukuruzka165.materialgram",
+        "feishin",
+        "spotify",
+        "steam",
+        "heroic"
+    ]
     position = "bottom"
     radius = 7
     radius_bottom_left = 7
@@ -702,7 +712,7 @@
 
     [weather]
     effects = true
-    enabled = true
+    enabled = false
     refresh_minutes = 30
     unit = "metric"
 
