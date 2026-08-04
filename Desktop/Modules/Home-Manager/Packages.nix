@@ -41,6 +41,11 @@
     gst_all_1.gst-plugins-bad
     gst_all_1.gst-plugins-ugly
     gst_all_1.gst-libav
+
+    # Libraries
+    nil
+    nixd
+    ruff
   ];
 
   programs.waterfox = {
