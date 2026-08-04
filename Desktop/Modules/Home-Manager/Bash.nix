@@ -5,12 +5,25 @@
     enable = true;
 
     shellAliases = {
-      ".nix-update" = "cd ~/.nix && sudo nix flake update && sudo nixos-rebuild switch --flake ~/.nix#Desktop";
       ".nix-packages" = "nvim ~/.nix/Desktop/Modules/Home-Manager/Packages.nix";
-      ".nix-clear" = "sudo nix-collect-garbage -d && sudo nixos-rebuild boot --flake ~/.nix#Desktop";
+      ".nix-collect" = "sudo nix-collect-garbage -d; sudo nixos-rebuild switch --flake ~/.nix#Desktop";
+      ".nix-reload" = "sudo nixos-rebuild switch --flake ~/.nix#Desktop";
     };
 
     initExtra = ''
+      .nix-upgrade() {
+        local current_dir=$(pwd)
+        cd ~/.nix
+        sudo nix flake update
+        sudo nixos-rebuild switch --flake ~/.nix#Desktop
+        cd "$current_dir"
+      }
+
+      .nix-push() {
+        local msg="''${1:-latest}"
+        (cd ~/.nix && git add . && git commit -m "$msg" && git push)
+      }
+
       PS1='\[\e[38;5;39m\] \[\e[38;5;75m\]~ \[\e[38;5;213m\]''${USER^}\[\e[38;5;75m\] in \[\e[38;5;123m\]\w \[\e[38;5;213m\]➜ \[\e[0m\]'
     '';
   };
