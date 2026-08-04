@@ -34,6 +34,7 @@
         capsule_group = []
         capsule_opacity = 1.0
         capsule_padding = 6.0
+        capsule_radius = 7.0
         capsule_thickness = 0.75999999046325684
         center = [ "workspaces" ]
         concave_edge_corners = true
@@ -42,7 +43,7 @@
         end = [ "tray", "spacer_2", "clock", "spacer_1", "control-center" ]
         font_family = "SF Pro Text"
         font_weight = 600
-        hover_highlight = true
+        hover_highlight = false
         layer = "top"
         margin_edge = 0
         margin_ends = 0
@@ -712,7 +713,7 @@
 
     [weather]
     effects = true
-    enabled = true
+    enabled = false
     refresh_minutes = 30
     unit = "metric"
 
@@ -752,8 +753,9 @@
     [widget.launcher]
     color = "primary"
     font_weight = 600
-    glyph = "circle"
+    glyph = "niri"
     icon_color = "primary"
+    scale = 1.6500000000000001
     type = "launcher"
 
     [widget.lock_keys]
