@@ -7,34 +7,56 @@
 
   boot = {
     loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot/efi";
+      };
+      limine = {
+        enable = true;
+        efiSupport = true;
+        biosSupport = false;
+        extraEntries = ''
+          /Windows 11
+              protocol: efi_chainload
+              image_path: uuid(D80F-4C1B):/EFI/Microsoft/Boot/bootmgfw.efi
+        '';
+        secureBoot = {
+          enable = true;
+          autoGenerateKeys = true;
+          autoEnrollKeys.enable = true;
+        };
+        style = {
+          wallpapers = [ ];
+          graphicalTerminal.background = "00000000";
+        };
+      };
     };
+
     kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-zen4;
-    # OBS Camera
+
     kernelModules = [ "v4l2loopback" ];
+
     extraModulePackages = with config.boot.kernelPackages; [
       v4l2loopback
     ];
     extraModprobeConfig = ''
       options v4l2loopback devices=1 video_nr=1 close_delay=0 card_label="OBS Virtual Camera" exclusive_caps=1
     '';
-    # Fix for some steam games
+
     kernel.sysctl = {
       "vm.max_map_count" = 2147483642;
     };
   };
 
-  # Better FFB Support
+  environment.systemPackages = [ pkgs.sbctl ];
+
   hardware.new-lg4ff.enable = true;
 
-  # App Image Compatibility
   programs.appimage = {
     enable = true;
     binfmt = true;
   };
 
-  # Scheduler
   services.scx = {
     enable = true;
     scheduler = "scx_lavd";

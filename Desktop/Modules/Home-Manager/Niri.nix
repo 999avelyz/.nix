@@ -246,26 +246,4 @@
           Mod+Shift+P { power-off-monitors; }
       }
     '';
-
-    home.file.".config/niri/scripts/noctalia-overview-widgets.sh" = {
-      executable = true;
-      text = ''
-        #!/bin/sh
-        # Hide noctalia desktop widgets while the niri Overview is open, show them again when it closes.
-        # Desktop widgets live on the wlr-layer-shell "Bottom" layer (hardcoded in noctalia), so niri's
-        # place-within-backdrop trick (background layer only) can't keep them from being duplicated under
-        # every workspace thumbnail in the Overview. Hiding them via noctalia's own runtime IPC instead.
-
-        while true; do
-            niri msg --json event-stream | while IFS= read -r line; do
-                is_open=$(printf '%s' "$line" | jq -r 'if has("OverviewOpenedOrClosed") then (.OverviewOpenedOrClosed.is_open | tostring) else empty end')
-                case "$is_open" in
-                    true)  noctalia msg desktop-widgets-hide ;;
-                    false) noctalia msg desktop-widgets-show ;;
-                esac
-            done
-            sleep 1
-        done
-      '';
-    };
 }

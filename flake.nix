@@ -13,6 +13,8 @@
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
+    waterfox-flake.url = "github:5aether/waterfox-flake";
+
     sf-fonts = {
       url = "github:999Avelyzzzz/SF-Fonts";
       inputs.nixpkgs.follows = "nixpkgs";

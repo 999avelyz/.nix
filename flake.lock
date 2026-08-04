@@ -108,11 +108,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1785571196,
-        "narHash": "sha256-KoTsyMQqnXQZq8deCEnu4QkyldkwH/bpMMhUcfMdGIw=",
+        "lastModified": 1785692966,
+        "narHash": "sha256-vUfIeBEfpbAfZ5zjgIkYk7eHBeVfCYVjLbWnMkseYnk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "148bab9c1c3c53136ecb44a6ea356a0ed5b39b06",
+        "rev": "643809054d65fdd466a63e3155b8c498cb483c04",
         "type": "github"
       },
       "original": {
@@ -148,16 +148,32 @@
         "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
       }
     },
+    "nixpkgs_5": {
+      "locked": {
+        "lastModified": 1785692966,
+        "narHash": "sha256-vUfIeBEfpbAfZ5zjgIkYk7eHBeVfCYVjLbWnMkseYnk=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "643809054d65fdd466a63e3155b8c498cb483c04",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "noctalia": {
       "inputs": {
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1785707827,
-        "narHash": "sha256-H70rICsCS/cx4KR1Qryln9HJd0iVekP+8or3OCKvPT0=",
+        "lastModified": 1785806038,
+        "narHash": "sha256-bt9gf3pUSkPW5DsRfcFhUaNvnFoqf4NTdpj6lXFXI6o=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "5aae077a3563da6fda3fc2a2b8ce9162e3a42019",
+        "rev": "0b8e960271091b3d97f68ec84150a1e5adba26cc",
         "type": "github"
       },
       "original": {
@@ -173,7 +189,8 @@
         "nixpkgs": "nixpkgs_2",
         "noctalia": "noctalia",
         "sf-fonts": "sf-fonts",
-        "spicetify-nix": "spicetify-nix"
+        "spicetify-nix": "spicetify-nix",
+        "waterfox-flake": "waterfox-flake"
       }
     },
     "sf-fonts": {
@@ -227,6 +244,24 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "waterfox-flake": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_5"
+      },
+      "locked": {
+        "lastModified": 1785806241,
+        "narHash": "sha256-VAji++Pvrjpb2DkijzQ6o9L5Ory4oX6QLlfKPs8fi8E=",
+        "owner": "5aether",
+        "repo": "waterfox-flake",
+        "rev": "d8c7af26dea7e4af28da1d1f5ef8929673493cf4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "5aether",
+        "repo": "waterfox-flake",
         "type": "github"
       }
     }

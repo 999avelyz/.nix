@@ -3,11 +3,12 @@
 {
   home.packages = with pkgs; [
     # System
-    git
     fetch
     playerctl
     rofi
     wl-clipboard
+    btop
+    ddcutil
     xwayland-satellite
     nautilus
 
@@ -18,8 +19,7 @@
     neovim
     zed-editor
 
-    # Browser & Social
-    firefox
+    # Social
     equibop
     materialgram
 
@@ -42,6 +42,11 @@
     gst_all_1.gst-plugins-ugly
     gst_all_1.gst-libav
   ];
+
+  programs.waterfox = {
+    enable = true;
+    policies.DisableTelemetry = true;
+  };
 
   nixpkgs.config.allowUnfree = true;
 }

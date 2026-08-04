@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.noctalia.homeModules.default
+    inputs.waterfox-flake.homeManagerModules.default
     inputs.spicetify-nix.homeManagerModules.spicetify
     ./Modules/Home-Manager/GTK.nix
     ./Modules/Home-Manager/Niri.nix
