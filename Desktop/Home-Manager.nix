@@ -7,7 +7,7 @@
     inputs.spicetify-nix.homeManagerModules.spicetify
     ./Modules/Home-Manager/GTK.nix
     ./Modules/Home-Manager/Niri.nix
-    ./Modules/Home-Manager/Noctalia.nix
+    ./Modules/Home-Manager/Noctalia/Settings.nix
     ./Modules/Home-Manager/Packages.nix
     ./Modules/Home-Manager/Spicetify.nix
     ./Modules/Home-Manager/Git.nix

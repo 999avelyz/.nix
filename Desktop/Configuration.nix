@@ -21,6 +21,7 @@
     ./Modules/NixOS/Users.nix
     ./Modules/NixOS/X11.nix
     ./Modules/NixOS/Repositories.nix
+    ./Modules/NixOS/KDE-Connect.nix
     ./Drives.nix
   ];
 

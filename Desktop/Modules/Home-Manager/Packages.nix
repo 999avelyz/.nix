@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -8,8 +8,11 @@
     rofi
     wl-clipboard
     ddcutil
+    gpu-screen-recorder
     xwayland-satellite
     nautilus
+    glib # gdbus, needed by Noctalia's phone-connect (KDE Connect) plugin
+    sshfs # phone-connect device file browsing
 
     # AI
     claude-code
@@ -49,6 +52,7 @@
 
   programs.waterfox = {
     enable = true;
+    package = inputs.waterfox-flake.packages.${pkgs.stdenv.hostPlatform.system}.default;
     policies.DisableTelemetry = true;
   };
 
