@@ -11,8 +11,8 @@ let
     };
 
     buildCommand = ''
-      mkdir -p $out/share/steam/compatibilitytools.d/${version}
-      tar -C $out/share/steam/compatibilitytools.d/${version} --strip-components=1 -xf $src
+      mkdir -p $out
+      tar -C $out --strip-components=1 -xf $src
     '';
   };
 in
