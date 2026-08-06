@@ -7,7 +7,6 @@
     ./Modules/NixOS/Steam.nix
     ./Modules/NixOS/FN-Mode.nix
     ./Modules/NixOS/Boot.nix
-    ./Modules/NixOS/Limine/Menu-Layout.nix
     ./Modules/NixOS/Cups.nix
     ./Modules/NixOS/Fonts.nix
     ./Modules/NixOS/Home-Manager.nix
@@ -22,6 +21,7 @@
     ./Modules/NixOS/X11.nix
     ./Modules/NixOS/Repositories.nix
     ./Modules/NixOS/KDE-Connect.nix
+    ./Modules/NixOS/Handbrake.nix
     ./Drives.nix
   ];
 

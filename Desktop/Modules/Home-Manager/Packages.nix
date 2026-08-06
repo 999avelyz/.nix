@@ -9,6 +9,7 @@
     wl-clipboard
     ddcutil
     gpu-screen-recorder
+    firefox
     xwayland-satellite
     nautilus
     glib # gdbus, needed by Noctalia's phone-connect (KDE Connect) plugin

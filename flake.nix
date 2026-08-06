@@ -21,6 +21,11 @@
     };
 
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v1.1.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }: {
@@ -29,6 +34,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           { nixpkgs.hostPlatform = "x86_64-linux"; }
+          inputs.lanzaboote.nixosModules.lanzaboote
           ./Desktop/Configuration.nix
         ];
       };
