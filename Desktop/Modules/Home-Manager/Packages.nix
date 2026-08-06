@@ -19,7 +19,6 @@
     claude-code
 
     # Editor
-    neovim
     zed-editor
 
     # Social
