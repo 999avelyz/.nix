@@ -335,6 +335,7 @@ blur_intensity = 0.5
 blurred_desktop = true
 enabled = true
 fingerprint = true
+lock_before_suspend = true
 monitors = []
 tint_intensity = 0.30000001192092896
 wallpaper = ""
@@ -387,6 +388,7 @@ collapse_on_dismiss = true
 enable_daemon = true
 history_retention_hours = 0
 layer = "top"
+max_visible = 0
 monitors = []
 offset_x = 20
 offset_y = 8
@@ -497,6 +499,7 @@ popup_borders = true
 popup_shadows = true
 screen_time_enabled = false
 settings_show_advanced = true
+settings_window_translucent = false
 setup_wizard_enabled = true
 shared_gl_context = true
 show_location = true
@@ -505,7 +508,7 @@ time_format = "{:%H:%M}"
 
     [shell.animation]
     enabled = true
-    speed = 1.0
+    speed = 1.5
 
     [shell.greeter_sync]
     auto_sync = false
@@ -697,9 +700,9 @@ enabled = true
 fill_color = ""
 fill_mode = "crop"
 per_monitor_directories = false
-transition = [ "fade", "wipe", "disc", "stripes", "zoom", "honeycomb" ]
+transition = [ "disc", "fade", "honeycomb", "stripes", "wipe", "zoom" ]
 transition_duration = 1500.0
-transition_on_startup = false
+transition_on_startup = true
 
     [wallpaper.automation]
     enabled = false
