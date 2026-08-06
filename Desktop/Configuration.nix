@@ -22,6 +22,7 @@
     ./Modules/NixOS/Repositories.nix
     ./Modules/NixOS/KDE-Connect.nix
     ./Modules/NixOS/Handbrake.nix
+    ./Modules/NixOS/Zram.nix
     ./Drives.nix
   ];
 

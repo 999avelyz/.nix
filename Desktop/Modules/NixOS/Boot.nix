@@ -60,9 +60,21 @@ in
     # /dev/input/jsX, no error in dmesg either, log just goes silent after
     # the device strings. NOGET (0x8) skips the GET_REPORT/SET_IDLE init
     # calls that cheap clone HID firmware like this tends to hang on.
+    #
+    # usbhid.mousepoll: forces a 1ms interrupt interval (1000Hz) on HID mice.
+    # The default 0 means "honor the endpoint's own bInterval", and the
+    # Logitech PRO 2 LIGHTSPEED receiver (046d:c54d) advertises bInterval=1,
+    # which on a high-speed bus is one 125us microframe — 8000Hz. Windows
+    # absorbs that fine, but here every report walks usbhid -> hid-logitech-dj
+    # -> evdev -> libinput -> niri -> Xwayland -> Wine -> the game's input
+    # thread, so a fast flick puts ~8000 wakeups/sec through the compositor
+    # main loop that also has to present frames. That showed up as frame-pacing
+    # hitches in Dead by Daylight in every window mode (it's the input path,
+    # not the display path). 1000Hz is past the point of returns anyway.
     kernelParams = [
       "video=HDMI-A-1:1920x1080@144"
       "usbhid.quirks=0x1021:0x1888:0x8"
+      "usbhid.mousepoll=1"
     ];
 
     kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-zen4;
