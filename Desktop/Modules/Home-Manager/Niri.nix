@@ -144,10 +144,10 @@
           Mod+XF86AudioRaiseVolume { spawn-sh "noctalia msg brightness-up";   }
           Mod+XF86AudioLowerVolume { spawn-sh "noctalia msg brightness-down"; }
 
-          Ctrl+Alt+Shift+Up     allow-when-locked=true { spawn-sh "playerctl play-pause"; }
-          Ctrl+Alt+Shift+Down   allow-when-locked=true { spawn-sh "playerctl play-pause"; }
-          Ctrl+Alt+Shift+Left   allow-when-locked=true { spawn-sh "playerctl previous";   }
-          Ctrl+Alt+Shift+Right  allow-when-locked=true { spawn-sh "playerctl next";       }
+          Mod+Page_Up   allow-when-locked=true { spawn-sh "playerctl next"; }
+          Mod+Page_Down allow-when-locked=true { spawn-sh "playerctl previous"; }
+          Mod+Home      allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+          Mod+Delete    allow-when-locked=true { spawn-sh "playerctl play-pause"; }
 
           Mod+W hotkey-overlay-title="Open the overview" { toggle-overview; }
           Mod+C hotkey-overlay-title="Close a window" repeat=false { close-window; }

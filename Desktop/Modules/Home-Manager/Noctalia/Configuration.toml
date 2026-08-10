@@ -58,7 +58,10 @@ order = [ "TopBar" ]
     thickness = 32
     widget_spacing = 6
 
-        [bar.TopBar.dead_zone]
+        [bar.TopBar.dead_zone.actions]
+        right = "panel-toggle session"
+        scroll_down = "brightness-down current"
+        scroll_up = "brightness-up current"
 
 [battery]
 warning_threshold = 10
@@ -539,12 +542,12 @@ time_format = "{:%H:%M}"
     open_near_click_clipboard = false
     open_near_click_control_center = true
     open_near_click_launcher = true
-    open_near_click_session = true
+    open_near_click_session = false
     open_near_click_wallpaper = false
     polkit_placement = "floating"
     polkit_position = "center"
     session_placement = "floating"
-    session_position = "center_right"
+    session_position = "top_center"
     shadow = true
     transparency_mode = "glass"
     wallpaper_placement = "attached"
@@ -572,9 +575,9 @@ time_format = "{:%H:%M}"
     show_cursor = false
 
     [shell.session]
-    grid = true
+    grid = false
     grid_columns = 1
-    show_shortcuts = true
+    show_shortcuts = false
 
         [shell.session.power]
 
@@ -585,7 +588,7 @@ time_format = "{:%H:%M}"
         enabled = true
         glyph = ""
         label = ""
-        shortcut = ""
+        shortcut = "1"
         variant = "destructive"
 
         [[shell.session.actions]]
@@ -595,7 +598,7 @@ time_format = "{:%H:%M}"
         enabled = true
         glyph = ""
         label = ""
-        shortcut = ""
+        shortcut = "2"
         variant = "default"
 
         [[shell.session.actions]]
@@ -605,7 +608,7 @@ time_format = "{:%H:%M}"
         enabled = true
         glyph = ""
         label = ""
-        shortcut = ""
+        shortcut = "3"
         variant = "default"
 
         [[shell.session.actions]]
@@ -615,17 +618,17 @@ time_format = "{:%H:%M}"
         enabled = true
         glyph = ""
         label = ""
-        shortcut = ""
+        shortcut = "4"
         variant = "default"
 
         [[shell.session.actions]]
         action = "lock_and_suspend"
         command = ""
         countdown_seconds = 0.0
-        enabled = false
+        enabled = true
         glyph = ""
         label = ""
-        shortcut = "3"
+        shortcut = "5"
         variant = "default"
 
     [shell.shadow]
