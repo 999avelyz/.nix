@@ -8,6 +8,7 @@
     ./Modules/Home-Manager/Browser.nix
     ./Modules/Home-Manager/GTK.nix
     ./Modules/Home-Manager/Niri.nix
+    ./Modules/Home-Manager/CM-Redirects.nix
     ./Modules/Home-Manager/Noctalia/Settings.nix
     ./Modules/Home-Manager/Packages.nix
     ./Modules/Home-Manager/Spicetify.nix

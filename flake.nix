@@ -16,7 +16,7 @@
     waterfox-flake.url = "github:5aether/waterfox-flake";
 
     sf-fonts = {
-      url = "github:999Avelyzzzz/SF-Fonts";
+      url = "github:999avelyz/SF-Fonts";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

@@ -7,8 +7,7 @@
     shellAliases = {
       ".nix-packages" = "nvim ~/.nix/Desktop/Modules/Home-Manager/Packages.nix";
       ".nix-collect" = "sudo nix-collect-garbage -d";
-      ".nix-reload" = "sudo nixos-rebuild switch --flake ~/.nix#Desktop";
-      ".noctalia-update" = "rm -rf ~/.nix/Desktop/Modules/Home-Manager/Noctalia/Configuration.toml; noctalia config export full >> ~/.nix/Desktop/Modules/Home-Manager/Noctalia/Configuration.toml; sudo nixos-rebuild switch --flake ~/.nix#Desktop";
+      ".noctalia-update" = "rm -rf ~/.nix/Desktop/Modules/Home-Manager/Noctalia/Configuration.toml; noctalia config export full >> ~/.nix/Desktop/Modules/Home-Manager/Noctalia/Configuration.toml";
     };
 
     initExtra = ''
@@ -16,6 +15,14 @@
         local current_dir=$(pwd)
         cd ~/.nix
         sudo nix flake update
+        sudo nixos-rebuild switch --flake ~/.nix#Desktop
+        cd "$current_dir"
+      }
+
+      .nix-reload() {
+        local current_dir=$(pwd)
+        cd ~/.nix
+        git add .
         sudo nixos-rebuild switch --flake ~/.nix#Desktop
         cd "$current_dir"
       }
