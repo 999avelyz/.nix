@@ -27,6 +27,7 @@
 
     # Gaming
     heroic
+    supertuxkart
 
     # Media
     feishin
@@ -57,4 +58,6 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+
+  
 }
