@@ -3,7 +3,7 @@
 {
   home-manager = {
     useUserPackages = true;
-    backupFileExtension = "bak";
+    backupFileExtension = "backup";
     extraSpecialArgs = { inherit inputs; };
     users.denis = ../../Home-Manager.nix;
   };

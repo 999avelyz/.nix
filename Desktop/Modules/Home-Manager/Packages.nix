@@ -4,16 +4,9 @@
   home.packages = with pkgs; [
     # System
     fetch
-    playerctl
-    rofi
-    wl-clipboard
-    ddcutil
-    gpu-screen-recorder
+    kdePackages.filelight
     firefox
-    xwayland-satellite
     nautilus
-    glib # gdbus, needed by Noctalia's phone-connect (KDE Connect) plugin
-    sshfs # phone-connect device file browsing
 
     # AI
     claude-code
@@ -31,24 +24,6 @@
 
     # Media
     feishin
-
-    # VideoThumbnail
-    ffmpeg
-    ffmpegthumbnailer
-    mpvpaper
-    mpv
-    libwebp
-    libjxl
-    librsvg
-    gst_all_1.gst-plugins-good
-    gst_all_1.gst-plugins-bad
-    gst_all_1.gst-plugins-ugly
-    gst_all_1.gst-libav
-
-    # Libraries
-    nil
-    nixd
-    ruff
   ];
 
   programs.waterfox = {
@@ -58,6 +33,4 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-
-  
 }

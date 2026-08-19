@@ -9,8 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    noctalia.url = "github:noctalia-dev/noctalia";
-
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     waterfox-flake.url = "github:5aether/waterfox-flake";
@@ -28,16 +26,17 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, ... }: {
-    nixosConfigurations = {
-      Desktop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          { nixpkgs.hostPlatform = "x86_64-linux"; }
-          inputs.lanzaboote.nixosModules.lanzaboote
-          ./Desktop/Configuration.nix
-        ];
+  outputs =
+    inputs@{ self, nixpkgs, ... }:
+    {
+      nixosConfigurations = {
+        Desktop = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            { nixpkgs.hostPlatform = "x86_64-linux"; }
+            ./Desktop/Configuration.nix
+          ];
+        };
       };
     };
-  };
 }

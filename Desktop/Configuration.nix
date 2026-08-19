@@ -3,28 +3,29 @@
 {
   imports = [
     inputs.home-manager.nixosModules.default
-    inputs.noctalia.nixosModules.default
-    ./Modules/NixOS/Steam.nix
-    ./Modules/NixOS/FN-Mode.nix
+    inputs.lanzaboote.nixosModules.lanzaboote
+
+    ./Drives.nix
+    ./Modules/NixOS/AMD.nix
     ./Modules/NixOS/Boot.nix
-    ./Modules/NixOS/Browser.nix
-    ./Modules/NixOS/Cups.nix
     ./Modules/NixOS/Fonts.nix
+    ./Modules/NixOS/Handbrake.nix
     ./Modules/NixOS/Home-Manager.nix
     ./Modules/NixOS/Locales.nix
-    ./Modules/NixOS/Nautilus.nix
     ./Modules/NixOS/Networking.nix
-    ./Modules/NixOS/Niri.nix
-    ./Modules/NixOS/Noctalia.nix
-    ./Modules/NixOS/AMD.nix
+    ./Modules/NixOS/Packages.nix
     ./Modules/NixOS/Pipewire.nix
+    ./Modules/NixOS/Polkit.nix
+    ./Modules/NixOS/Portal.nix
+    ./Modules/NixOS/Repositories.nix
+    ./Modules/NixOS/Screenshooter.nix
+    ./Modules/NixOS/Services.nix
+    ./Modules/NixOS/Session.nix
+    ./Modules/NixOS/Steam.nix
+    ./Modules/NixOS/Tailscale.nix
     ./Modules/NixOS/Users.nix
     ./Modules/NixOS/X11.nix
-    ./Modules/NixOS/Repositories.nix
-    ./Modules/NixOS/KDE-Connect.nix
-    ./Modules/NixOS/Handbrake.nix
     ./Modules/NixOS/Zram.nix
-    ./Drives.nix
   ];
 
   fileSystems."/mnt/NVME" = {
@@ -51,7 +52,11 @@
     ];
   };
 
+  programs.sway.enable = true;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   nixpkgs.config.allowUnfree = true;
+
   system.stateVersion = "26.05";
 }
