@@ -9,7 +9,6 @@
     cloudflared
     wl-clipboard
     ddcutil
-    gpu-screen-recorder
     glib
     jstest-gtk
     evtest
@@ -18,7 +17,6 @@
     sshfs
     playerctl
     rofi
-    wofi
     google-cursor
     xdg-desktop-portal-wlr
     ffmpeg

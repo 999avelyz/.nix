@@ -42,14 +42,12 @@ in
 
     kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-zen4;
 
-    # Ho aggiunto "hid_apple" qui, unendo la lista
-    kernelModules = [ "v4l2loopback" "i2c-dev" "hid_apple" "hid-playstation" "xpad" ];
+    kernelModules = [ "v4l2loopback" "i2c-dev" "hid_apple" "hid-playstation" "xpad" "wireguard" ];
 
     extraModulePackages = with config.boot.kernelPackages; [
       v4l2loopback
     ];
 
-    # Ho unito le due configurazioni modprobe in un unico blocco testuale
     extraModprobeConfig = ''
       options v4l2loopback devices=1 video_nr=1 close_delay=0 card_label="OBS Virtual Camera" exclusive_caps=1
       options hid_apple fnmode=2
