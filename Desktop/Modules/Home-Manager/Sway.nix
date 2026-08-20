@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   wayland.windowManager.sway = {
@@ -6,6 +11,7 @@
     systemd.enable = true;
 
     config = rec {
+      defaultWorkspace = "workspace number 1";
       modifier = "Mod4";
       terminal = "kitty";
       menu = "rofi -show drun";
@@ -17,7 +23,30 @@
         };
       };
 
+      seat = {
+        "*" = {
+          xcursor_theme = "GoogleDot-White 24";
+        };
+      };
+
+      fonts = {
+        names = [ "SF Pro Text" ];
+        size = 10.0;
+      };
+
+      window = {
+        titlebar = false;
+        border = 2;
+      };
+
+      gaps = {
+        inner = 10;
+        outer = 10;
+        smartGaps = false;
+      };
+
       floating = {
+        titlebar = false;
         modifier = "${modifier} normal";
       };
 
@@ -26,7 +55,8 @@
         "${modifier}+c" = "kill";
         "${modifier}+r" = "exec ${menu}";
         "${modifier}+a" = "reload";
-        "${modifier}+l" = "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'";
+        "${modifier}+l" =
+          "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'";
 
         "${modifier}+Prior" = "exec playerctl next";
         "${modifier}+Next" = "exec playerctl previous";
@@ -73,7 +103,11 @@
 
         "${modifier}+Return" = "mode resize";
 
-        "Print" = "exec grim ~/a.png";
+        "Shift+Print" = "exec ascreentool region";
+        "Print" = "exec ascreentool output";
+        "Ctrl+Print" = "exec ascreentool window";
+        "Alt+Print" = "exec ascreentool record-reg";
+        "Alt+Delete" = "exec ascreentool stop";
       };
 
       modes = {
@@ -105,11 +139,11 @@
       ];
     };
 
-    # extraConfig viene unito alla fine del file generato, ottimo per costrutti speciali o complessi
     extraConfig = ''
       exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
       exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
       exec ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1
+      exec awallpapertool start
 
       bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
       bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
@@ -117,7 +151,6 @@
 
       bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
       bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-
     '';
   };
 }

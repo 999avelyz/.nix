@@ -15,9 +15,9 @@
     };
 
     cursorTheme = {
-      name = "Bibata-Modern-Classic";
-      package = pkgs.bibata-cursors;
-      size = 16;
+      name = "GoogleDot-White";
+      package = pkgs.google-cursor;
+      size = 24;
     };
 
     font = {

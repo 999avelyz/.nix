@@ -7,6 +7,8 @@
 
     ./Drives.nix
     ./Modules/NixOS/AMD.nix
+    ./Modules/NixOS/AScreenTool.nix
+    ./Modules/NixOS/AWallpaperTool.nix
     ./Modules/NixOS/Boot.nix
     ./Modules/NixOS/Fonts.nix
     ./Modules/NixOS/Handbrake.nix
@@ -18,9 +20,9 @@
     ./Modules/NixOS/Polkit.nix
     ./Modules/NixOS/Portal.nix
     ./Modules/NixOS/Repositories.nix
-    ./Modules/NixOS/Screenshooter.nix
     ./Modules/NixOS/Services.nix
     ./Modules/NixOS/Session.nix
+    ./Modules/NixOS/Shell.nix
     ./Modules/NixOS/Steam.nix
     ./Modules/NixOS/Tailscale.nix
     ./Modules/NixOS/Users.nix

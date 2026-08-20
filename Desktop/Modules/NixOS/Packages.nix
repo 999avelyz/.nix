@@ -11,6 +11,10 @@
     ddcutil
     gpu-screen-recorder
     glib
+    jstest-gtk
+    evtest
+    gnome-disk-utility
+    dualsensectl
     sshfs
     playerctl
     rofi

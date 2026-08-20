@@ -43,7 +43,7 @@ in
     kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-zen4;
 
     # Ho aggiunto "hid_apple" qui, unendo la lista
-    kernelModules = [ "v4l2loopback" "i2c-dev" "hid_apple" ];
+    kernelModules = [ "v4l2loopback" "i2c-dev" "hid_apple" "hid-playstation" "xpad" ];
 
     extraModulePackages = with config.boot.kernelPackages; [
       v4l2loopback
