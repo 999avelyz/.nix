@@ -15,6 +15,7 @@
     ./Modules/NixOS/Home-Manager.nix
     ./Modules/NixOS/Locales.nix
     ./Modules/NixOS/Networking.nix
+    ./Modules/NixOS/Niri.nix
     ./Modules/NixOS/Packages.nix
     ./Modules/NixOS/Pipewire.nix
     ./Modules/NixOS/Polkit.nix
@@ -55,6 +56,7 @@
   };
 
   programs.sway.enable = true;
+  programs.hyprland.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

@@ -10,10 +10,7 @@
     wl-clipboard
     ddcutil
     glib
-    jstest-gtk
-    evtest
     gnome-disk-utility
-    dualsensectl
     sshfs
     playerctl
     rofi

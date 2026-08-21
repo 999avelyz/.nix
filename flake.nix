@@ -9,6 +9,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    noctalia.url = "github:noctalia-dev/noctalia";
+
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     waterfox-flake.url = "github:5aether/waterfox-flake";

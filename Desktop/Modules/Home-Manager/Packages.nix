@@ -21,6 +21,7 @@
     # Gaming
     heroic
     supertuxkart
+    lunar-client
 
     # Media
     feishin
